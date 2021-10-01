@@ -1,0 +1,5 @@
+﻿  lab1.cpp
+D:\KPI\OP-Labs\lab1\lab1\lab1\lab1.cpp(35,11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\KPI\OP-Labs\lab1\lab1\lab1\lab1.cpp(36,11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\KPI\OP-Labs\lab1\lab1\lab1\lab1.cpp(37,11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  lab1.vcxproj -> D:\KPI\OP-Labs\lab1\lab1\x64\Debug\lab1.exe
