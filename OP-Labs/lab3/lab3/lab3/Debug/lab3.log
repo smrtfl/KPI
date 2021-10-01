@@ -1,0 +1,5 @@
+﻿  lab3.cpp
+D:\KPI\OP-Labs\lab3\lab3\lab3\lab3.cpp(16,12): warning C4244: return: преобразование "int" в "float", возможна потеря данных
+D:\KPI\OP-Labs\lab3\lab3\lab3\lab3.cpp(24,13): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:\KPI\OP-Labs\lab3\lab3\lab3\lab3.cpp(25,16): warning C4101: f: неиспользованная локальная переменная
+  lab3.vcxproj -> D:\KPI\OP-Labs\lab3\lab3\Debug\lab3.exe
