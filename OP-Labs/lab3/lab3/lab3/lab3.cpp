@@ -6,7 +6,8 @@ using namespace std;
 /*Функція розрахування факторіалу від n*/
 float fact(int n)
 {
-    int f = 1, i = 1;
+    float f = 1;
+    int i = 1;
 
     while (i <= n)
     {
@@ -22,10 +23,10 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    float e = exp(1), x = 1;
-    int n = 1, f;
+    float e = exp(1), x = 1, f;
+    int n = 1;
 
-    cout << "Значення e :" << e << "\n\n";
+    cout << "Значення e: " << e << "\n\n";
 
     while (x != e) 
     {
@@ -46,4 +47,6 @@ int main()
 
     return 0;
 }
+
+
 
