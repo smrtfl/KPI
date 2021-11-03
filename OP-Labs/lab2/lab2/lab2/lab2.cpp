@@ -7,7 +7,7 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    float x, ota, y;
+    /*float x, ota, y;
 
     cout << "Введіть значення x: ";
     cin >> x;
@@ -21,5 +21,20 @@ int main()
 
     cout << "\nЗначення функції f(x) =" << y << "\n";
 
-    return 0;
+    return 0;*/
+
+    int day;
+
+    cout << "input: ";
+    cin >> day;
+
+    switch (day)
+    {
+    case 1:
+        printf("Monday");
+        break;
+    case 2:
+        printf("Tuesday");
+        break;
+    }
 }
