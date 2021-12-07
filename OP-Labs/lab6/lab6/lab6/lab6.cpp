@@ -1,11 +1,12 @@
 ﻿#include <iostream>
+#include <cmath>
 #include <windows.h>
 using namespace std;
 
 /*Функція обчислення факторіала*/
 int fact(int i)
 {
-	if (i == 0)
+	if (i <= 1)
 	{
 		return 1;
 	}
@@ -50,3 +51,4 @@ int main()
 	y = cos(a, n, eps) + pow(cos(b, n, eps), 2) + cos(a + b, n, eps);
 
 	cout << "\ny = " << y << endl;
+}

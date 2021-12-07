@@ -1,4 +1,4 @@
 ﻿  lab6.cpp
-D:\KPI\OP-Labs\lab6\lab6\lab6\lab6.cpp(23,42): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-D:\KPI\OP-Labs\lab6\lab6\lab6\lab6.cpp(50,46): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-D:\KPI\OP-Labs\lab6\lab6\lab6\lab6.cpp(36): fatal error C1075: "{": не найдена несоответствующая лексема
+D:\KPI\OP-Labs\lab6\lab6\lab6\lab6.cpp(24,42): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+D:\KPI\OP-Labs\lab6\lab6\lab6\lab6.cpp(51,46): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  lab6.vcxproj -> D:\KPI\OP-Labs\lab6\lab6\Debug\lab6.exe

@@ -17,4 +17,4 @@ def cos(x1, n1, eps1):
         return sum + cos(x1, n1 + 1, eps1)
 
 y =  cos(a, n, eps) + (cos(b, n, eps) ** 2) + cos (a + b, n, eps)
-print("\ncos({a}) + cos({b})^2 + cos ({c}) = {y}".format(a = a, b = b, c = a + b, y = y)
+print("\ncos({a}) + cos({b})^2 + cos({c}) = {y}".format(a=a, b=b, c=a+b, y=y))
