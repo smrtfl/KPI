@@ -9,7 +9,7 @@ int main()
 	SetConsoleOutputCP(1251);
 
 	char a[10], b[10], c[10];
-	int average = 0;
+	int average = 0, count = 0;
 
 	/*Елементи массивів а та b*/
 	for (int i = 0; i < 10; i++)
@@ -34,6 +34,7 @@ int main()
 		if (a[i] == b[i])
 		{
 			c[i] = a[i];
+			count++;
 		}
 		else
 		{
@@ -43,9 +44,13 @@ int main()
 		cout << "c[" << i << "] = " << c[i] << "  ";
 
 		/*Середнє арифметичне елементів, коди яких менше 82*/
-		if (c[i] < 82)
+		if (c[i] < 82 && count > 0)
 		{
-			average += c[i] / 10;
+			average += c[i] / count;
+		}
+		else
+		{
+			average = 0;
 		}
 	}
 
