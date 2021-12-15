@@ -2,14 +2,23 @@
 #include "windows.h"
 using namespace std;
 
+void arr_start(float**);
+
+void ext_c(float**);
+void ext_b(float**);
+
+void arr_y(float**, float**);
+void arr_z(float**, float**);
+
+int n, m;
+int row_maxc, row_minc, column_maxc, column_minc;
+int row_maxb, row_minb, column_maxb, column_minb;
+float maxc, minc, maxb, minb;
+
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-
-    int n, m;
-    int row_maxc = 0, row_minc = 0, column_maxc = 0, column_minc = 0;
-    int row_maxb = 0, row_minb = 0, column_maxb = 0, column_minb = 0;
 
     cout << "n рядків: ";
     cin >> n;
@@ -44,120 +53,139 @@ int main()
         z[i] = new float[m];
     }
 
-    cout << "\nМатриця C: " << endl;
+    cout << "\nМатриця С" << endl;
+    arr_start(c);
+
+    ext_c(c);
+
+    cout << "\n\nМатриця Y (модифікована C): \n";
+    arr_y(y, c);
+
+    cout << "\n--------------------------------------------------\n";
+    
+    cout << "\nМатриця B" << endl;
+    arr_start(b);
+
+    ext_b(b);
+
+    cout << "\n\nМатриця Z (модифікована Z): \n";
+    arr_z(z, b);
+}
+
+/*Задаємо масиви С та В*/
+void arr_start(float** arr)
+{
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            c[i][j] = (float)(rand() % 2000 - 1000) / 100;
-            cout << c[i][j] << "\t";
+            arr[i][j] = (float)(rand() % 2000 - 1000) / 100;
+            cout << arr[i][j] << "\t";
         }
         cout << "\n";
     }
+}
 
-    float maxc = c[0][0], minc = c[0][0];
+/*Мінімум та максимум масиву С*/
+void ext_c(float** arr)
+{
+    maxc = arr[0][0], minc = arr[0][0];
 
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            if (c[i][j] > maxc)
+            if (arr[i][j] > maxc)
             {
-                maxc = c[i][j];
+                maxc = arr[i][j];
                 row_maxc = i;
                 column_maxc = j;
             }
-            else if (c[i][j] < minc)
+            else if (arr[i][j] < minc)
             {
-                minc = c[i][j];
+                minc = arr[i][j];
                 row_minc = i;
-                column_minc = j;
+                column_minc = j;            
             }
         }
     }
-
     cout << "\nМаксимальне значення матриці C: c[" << row_maxc << "][" << column_maxc << "] = " << maxc;
     cout << "\nМінімальне значення матриці C: c[" << row_minc << "][" << column_minc << "] = " << minc;
+}
 
-    cout << "\n\nМатриця Y (модифікована C): \n";
+/*Мінімум та максимум масиву В*/
+void ext_b(float** arr)
+{
+    maxb = arr[0][0], minb = arr[0][0];
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (arr[i][j] > maxb)
+            {
+                maxb = arr[i][j];
+                row_maxb = i;
+                column_maxb = j;
+            }
+            else if (arr[i][j] < minb)
+            {
+                minb = arr[i][j];
+                row_minb = i;
+                column_minb = j;
+            }
+        }
+    }
+    cout << "\nМаксимальне значення матриці B: b[" << row_maxb << "][" << column_maxb << "] = " << maxb;
+    cout << "\nМінімальне значення матриці B: b[" << row_minb << "][" << column_minb << "] = " << minb;
+}
+
+/*Знаходимо масив Y*/
+void arr_y(float** arr1, float** arr2)
+{
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
             if (i == row_maxc)
             {
-                y[i][j] = c[row_minc][j];
+                arr1[i][j] = arr2[row_minc][j];
             }
             else if (i == row_minc)
             {
-                y[i][j] = c[row_maxc][j];
+                arr1[i][j] = arr2[row_maxc][j];
             }
             else
             {
-                y[i][j] = c[i][j];
+                arr1[i][j] = arr2[i][j];
             }
-            cout << y[i][j] << "\t";
+            cout << arr1[i][j] << "\t";
         }
         cout << "\n";
     }
+}
 
-    cout << "\n--------------------------------------------------";
-
-    cout << "\n\nМатриця B: " << endl;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            b[i][j] = (float)(rand() % 2000 - 1000) / 100;
-            cout << b[i][j] << "\t";
-        }
-        cout << "\n";
-    }
-
-    float maxb = b[0][0], minb = b[0][0];
-
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            if (b[i][j] > maxb)
-            {
-                maxb = b[i][j];
-                row_maxb = i;
-                column_maxb = j;
-            }
-            else if (b[i][j] < minb)
-            {
-                minb = b[i][j];
-                row_minb = i;
-                column_minb = j;
-            }
-        }
-    }
-
-    cout << "\nМаксимальне значення матриці B: b[" << row_maxb << "][" << column_maxb << "] = " << maxb;
-    cout << "\nМінімальне значення матриці B: b[" << row_minb << "][" << column_minb << "] = " << minb;
-
-    cout << "\n\nМатриця Z (модифікована B): \n";
+/*Знаходимо масив Z*/
+void arr_z(float** arr1, float ** arr2)
+{
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
             if (i == row_maxb)
             {
-                z[i][j] = b[row_minb][j];
+                arr1[i][j] = arr2[row_minb][j];
             }
             else if (i == row_minb)
             {
-                z[i][j] = b[row_maxb][j];
+                arr1[i][j] = arr2[row_maxb][j];
             }
             else
             {
-                z[i][j] = b[i][j];
+                arr1[i][j] = arr2[i][j];
             }
-            cout << z[i][j] << "\t";
+            cout << arr1[i][j] << "\t";
         }
         cout << "\n";
     }
 }
-
