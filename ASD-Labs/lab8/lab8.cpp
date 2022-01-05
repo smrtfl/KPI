@@ -40,6 +40,8 @@ int main()
 
 void input(float** arr)
 {
+	
+
 	cout << "Початкова матриця:\n";
 
 	for (int i = 0; i < n; i++)
@@ -47,10 +49,14 @@ void input(float** arr)
 		for (int j = 0; j < m; j++)
 		{
 			arr[i][j] = (float)(rand() % 200 - 100) / 10;
-			cout << arr[i][j] << "\t";
+			/*cout << arr[i][j] << "\t";*/
 		}
 		cout << "\n";
 	}
+	float* p;
+	p = &arr[0][1];
+	cout << p;
+	
 }
 
 void average_col(float** arr, float* ave)

@@ -1,93 +1,93 @@
-ï»¿#include <iostream>
-#include "windows.h"
-using namespace std;
-
-void arr_b(float*);
-void maximum(float*);
-void replace(float*);
-
-int n, z, counter = 0, index = 0;
-float maxb, first;
-
-int main()
-{
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-
-	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð´Ð¾Ð²Ð¶Ð¸Ð½Ñƒ Ð¼Ð°ÑÐ¸Ð²Ñƒ: ";
-	cin >> n;
-
-	float* b = new float[n];
-
-	cout << "ÐœÐ°ÑÐ¸Ð² b[]: ";
-	arr_b(b);
-
-	cout << "\n\nÐ’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð°Ñ‚ÑƒÑ€Ð°Ð»Ð½Ðµ z: ";
-	cin >> z;
-	maximum(b);
-
-	cout << "\n\nÐÐ¾Ð²Ð¸Ð¹ Ð¼Ð°ÑÐ¸Ð² b[]: ";
-	replace(b);
-
-	cout << endl;
-}
-
-/*Ð—Ð½Ð°Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð¼Ð°ÑÐ¸Ð² B*/
-void arr_b(float* arr)
-{
-	for (int i = 0; i < n; i++)
-	{
-		*arr = (float)(rand() % 200 - 100) / 10;
-		if (i == 0)
-		{
-			first = *arr;
-		}
-		cout << "b[" << i << "] = " << *arr << "\t";
-		arr++;
-	}
-}
-
-/*Ð—Ð½Ð°Ð¹Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ ÐºÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼ÐµÐ½ÑˆÐ¸Ñ… Ð·Ð° z Ñ‚Ð° Ñ—Ñ… Ð¼Ð°ÐºÑÐ¸Ð¼ÑƒÐ¼*/
-void maximum(float* arr)
-{
-	maxb = *arr;
-
-	for (int i = 0; i < n; i++)
-	{
-		if (*arr < z)
-		{
-
-			if (*arr > maxb)
-			{
-				maxb = *arr;
-				index = i;
-			}
-			counter++;
-		}
-		arr++;
-	}
-	cout << "\nÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼ÐµÐ½ÑˆÐ¸Ñ… Ð·Ð° z: " << counter;
-	cout << "\nÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ð½Ñ ÑÐµÑ€ÐµÐ´ Ñ†Ð¸Ñ… ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð²: b[" << index << "] = " << maxb;
-}
-
-/*ÐœÑ–Ð½ÑÑ”Ð¼Ð¾ Ð¿ÐµÑ€ÑˆÐ¸Ð¹ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð· Ð¼Ð°ÐºÑÐ¸Ð¼ÑƒÐ¼Ð¾Ð¼*/
-void replace(float* arr)
-{
-	for (int i = 0; i < n; i++)
-	{
-		if (i == 0)
-		{
-			*arr = maxb;
-		}
-		else if (i == index)
-		{
-			*arr = first;
-		}
-		else
-		{
-			*arr = *arr;
-		}
-		cout << "b[" << i << "] = " << *arr << "\t";
-		arr++;
-	}
-}
+//#include <iostream>
+//#include "windows.h"
+//using namespace std;
+//
+//void arr_b(float*);
+//void maximum(float*);
+//void replace(float*);
+//
+//int n, z, counter = 0, index = 0;
+//float maxb, first;
+//
+//int main()
+//{
+//	SetConsoleCP(1251);
+//	SetConsoleOutputCP(1251);
+//
+//	cout << "Ââåä³òü äîâæèíó ìàñèâó: ";
+//	cin >> n;
+//
+//	float* b = new float[n];
+//
+//	cout << "Ìàñèâ b[]: ";
+//	arr_b(b);
+//
+//	cout << "\n\nÂâåä³òü íàòóðàëíå z: ";
+//	cin >> z;
+//	maximum(b);
+//
+//	cout << "\n\nÍîâèé ìàñèâ b[]: ";
+//	replace(b);
+//
+//	cout << endl;
+//}
+//
+///*Çíàõîäèìî ìàñèâ B*/
+//void arr_b(float* arr)
+//{
+//	for (int i = 0; i < n; i++)
+//	{
+//		*arr = (float)(rand() % 200 - 100) / 10;
+//		if (i == 0)
+//		{
+//			first = *arr;
+//		}
+//		cout << "b[" << i << "] = " << *arr << "\t";
+//		arr++;
+//	}
+//}
+//
+///*Çíàéõîäèìî ê³ëüê³ñòü åëåìåíò³â ìåíøèõ çà z òà ¿õ ìàêñèìóì*/
+//void maximum(float* arr)
+//{
+//	maxb = *arr;
+//
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (*arr < z)
+//		{
+//
+//			if (*arr > maxb)
+//			{
+//				maxb = *arr;
+//				index = i;
+//			}
+//			counter++;
+//		}
+//		arr++;
+//	}
+//	cout << "\nÊ³ëüê³ñòü åëåìåíò³â ìåíøèõ çà z: " << counter;
+//	cout << "\nÌàêñèìàëüíå çíà÷åíííÿ ñåðåä öèõ åëåìåíò³â: b[" << index << "] = " << maxb;
+//}
+//
+///*Ì³íÿºìî ïåðøèé åëåìåíò ç ìàêñèìóìîì*/
+//void replace(float* arr)
+//{
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (i == 0)
+//		{
+//			*arr = maxb;
+//		}
+//		else if (i == index)
+//		{
+//			*arr = first;
+//		}
+//		else
+//		{
+//			*arr = *arr;
+//		}
+//		cout << "b[" << i << "] = " << *arr << "\t";
+//		arr++;
+//	}
+//}
