@@ -49,12 +49,21 @@ int words(char** s, int n1, int w_c)
 
 	for (int i = 0; i < n1; i++)
 	{
-		if ((s[0][i] == ' ' and s[0][i + 1] != ' ') or (s[0][i] == '\0' and s[0][i + 1] != '\0'))
+		if (s[0][i] == ' ' and s[0][i + 1] == '\0')
 		{
+			s[0][i] = '\0';
+		}
+
+		if ((s[0][i] == ' ' and s[0][i + 1] != ' ') or (s[0][i] == '\0' and s[0][i + 1] != '\0'))
+		{	
 			for (int k = 0; k < i - word_start; k++)
 			{
 				s[w_c][k] = s[0][word_start + k];
 				s[w_c][i - word_start] = '\0';
+				if (s[w_c][k] == ' ')
+				{
+					s[w_c][k] = '\0';
+				}
 			}
 			w_c++;
 			word_start = i + 1;

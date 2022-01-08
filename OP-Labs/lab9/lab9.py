@@ -4,7 +4,7 @@ def InputText(s): #Введення тексу
         return s
 
 def AllWords(s, w): #Пошук усіх слів у рядку
-    w = s.split(' ')
+    w = s.split()
     return w
 
 def OutputWords(w): #Функція виведення усіх слів (можна і без функції)
