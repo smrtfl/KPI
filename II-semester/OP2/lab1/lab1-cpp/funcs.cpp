@@ -8,11 +8,16 @@ using namespace std;
 void input_file(string file_path)
 {
 	ofstream fout;
-	string str;
+	ifstream fin;
+	string str, start_file;
 	char exit = 5; //Ctrl - E = 5
 	int line_count = 0; //лічильник рядків
 
-	fout.open(file_path); //створюємо і відкриваємо файл
+	fin.open(file_path); //створюємо або відкриваємо файл
+	getline(fin, start_file); //перевіряємо файл на порожність
+	fin.close();
+
+	fout.open(file_path, ios::app); //відкриваємо файл
 
 	if (!fout.is_open())
 	{
@@ -27,7 +32,7 @@ void input_file(string file_path)
 
 			if (str.find(exit) == string::npos && !str.empty())
 			{
-				if (line_count > 0)
+				if (line_count > 0 or start_file.length() > 0)
 				{
 					fout << "\n";
 				}
@@ -50,6 +55,7 @@ void new_file(string file_path, string new_fp)
 	int line_count = 0;
 
 	fin.open(file_path);
+
 	fout.open(new_fp); //створюємо новий файл
 
 	if (!fin.is_open())

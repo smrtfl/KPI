@@ -1,5 +1,6 @@
 from funcs import *
 
+# Шляхи до файлів та їх назви
 path = "text_file.txt"
 new_path = "new_file.txt"
 
