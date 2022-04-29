@@ -4,7 +4,16 @@ using namespace std;
 
 int main()
 {
-	cout << "---YOUR SCHEDULE---\n";
 	string path = "todo_list.dat";
-	create_list(path);
+	string new_path = "spare_time.dat";
+
+	create_schedule(path);
+	read_data(path);
+
+	closest_activity(path);
+
+	rest_info(path, new_path);
+	read_data(new_path);
+
+	cout << "\n";
 }
