@@ -8,5 +8,5 @@ read_data(path)
 
 closest_activity(path)
 
-spare_info(path, new_path)
+rest_info(path, new_path)
 read_data(new_path)
