@@ -1,0 +1,6 @@
+﻿  funcs.cpp
+D:\KPI\II-semester\OP2\lab5\lab5-cpp\funcs.cpp(65,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\KPI\II-semester\OP2\lab5\lab5-cpp\funcs.cpp(72,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\KPI\II-semester\OP2\lab5\lab5-cpp\funcs.cpp(82,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\KPI\II-semester\OP2\lab5\lab5-cpp\funcs.cpp(93,20): warning C4018: <: несоответствие типов со знаком и без знака
+  lab5-cpp.vcxproj -> D:\KPI\II-semester\OP2\lab5\lab5-cpp\Debug\lab5-cpp.exe
