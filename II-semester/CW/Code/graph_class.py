@@ -1,3 +1,4 @@
+import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -153,7 +154,7 @@ class Graph:
         index = 0
 
         for _ in range(n):
-            min_colors = 20
+            min_colors = 21
             for i in range(n):
                 if i not in indices and mrv_available[self.__vertices[i]] < min_colors:
                     min_colors = mrv_available[self.__vertices[i]]
