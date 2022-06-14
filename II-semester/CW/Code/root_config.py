@@ -18,7 +18,7 @@ class App:
 
         # window settings
         self.__master.title('Course Work')
-        # self.__master.iconphoto(True, PhotoImage(file='files/kpi_logo.png'))
+        self.__master.iconphoto(True, PhotoImage(file='files/kpi_logo.png'))
         self.__master.geometry(f'{root_width}x{root_height}+{center_x}+{center_y}')
         self.__master.resizable(width=True, height=True)
 
