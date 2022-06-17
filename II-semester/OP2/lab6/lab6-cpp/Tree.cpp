@@ -56,10 +56,10 @@ void Tree::destroy_tree(node* leaf) // destroy tree
 
 void Tree::output() // initialize tree output
 {
-    graphical_tree(root, nullptr, false);
+    graphical_tree(root, NULL, false);
 }
 
-void Tree::show_trunk(Trunk* curr_trunk)
+void Tree::show_trunk(Trunk* curr_trunk) // output trunk
 {
     if (curr_trunk == NULL) {
         return;
@@ -69,36 +69,36 @@ void Tree::show_trunk(Trunk* curr_trunk)
     cout << curr_trunk->connection;
 }
 
-void Tree::graphical_tree(node* curr_root, Trunk* prev_trunk, bool isLeft)
+void Tree::graphical_tree(node* curr_root, Trunk* previous, bool is_right) // output tree horizontally
 {
     if (curr_root == NULL) {
         return;
     }
 
     string prev_connection = "    ";
-    Trunk* curr_trunk = new Trunk(prev_trunk, prev_connection);
+    Trunk* curr_trunk = new Trunk(previous, prev_connection);
 
     graphical_tree(curr_root->right, curr_trunk, true);
 
-    if (!prev_trunk) {
+    if (!previous) {
         curr_trunk->connection = "---";
     }
-    else if (isLeft)
+    else if (is_right)
     {
         curr_trunk->connection = ".---";
         prev_connection = "   |";
     }
-    else if (prev_trunk)
+    else if (previous)
     {
         curr_trunk->connection = "`---";
-        prev_trunk->connection = prev_connection;
+        previous->connection = prev_connection;
     }
 
     show_trunk(curr_trunk);
     cout << " " << curr_root->data << endl;
 
-    if (prev_trunk) {
-        prev_trunk->connection = prev_connection;
+    if (previous) {
+        previous->connection = prev_connection;
     }
     curr_trunk->connection = "   |";
 

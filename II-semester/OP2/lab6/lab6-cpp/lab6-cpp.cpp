@@ -13,9 +13,16 @@ int main()
 	t.insert(n); // tree root is n
 	t.insert(2); // first level siblings are 2
 
-	for (int i = 3; i <= n; i++)
+	if (n <= 2)
 	{
-		t.insert(i); // insert next levels in the tree
+		t.insert(n);
+	}
+	else
+	{
+		for (int i = 3; i <= n; i++)
+		{
+			t.insert(i); // insert next levels in the tree
+		}
 	}
 
 	cout << "\nTree output:\n";

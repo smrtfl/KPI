@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <iomanip>
-#include <cstring>
+#include <string>
 using namespace std;
 
 struct node
@@ -35,6 +35,7 @@ public:
 private:
     void insert(int, node*);
     void destroy_tree(node*);
+
 
     void show_trunk(Trunk*);
     void graphical_tree(node*, Trunk*, bool);
